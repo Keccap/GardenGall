@@ -15,7 +15,7 @@ $(window).resize(function() {
 });
 
 
-$('.works-wrap').magnificPopup({
+$('.works-wrap, .project-wrap').magnificPopup({
     type: 'inline',
     delegate: "a",
     fixedContentPos: true,
@@ -30,7 +30,6 @@ $('.works-wrap').magnificPopup({
     removalDelay: 300,
     mainClass: 'my-mfp-zoom-in'
   });
-
 
 
 
@@ -72,6 +71,14 @@ $(".item-works").each(function(e) {
   
   $(this).attr("href", "#works-popup-" + e)
     .find(".item-works-mfp-content").attr("id", "works-popup-" + e)
+  
+  
+})
+
+$(".item-project").each(function(e) {
+  
+  $(this).attr("href", "#project-popup-" + e)
+    .find(".item-project-mfp-content").attr("id", "project-popup-" + e)
   
   
 })
