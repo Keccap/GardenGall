@@ -8,10 +8,14 @@ $(function() {
 
 $('.adv-item p').equalHeights();
 $('.adv-item h3').equalHeights();
+$('.direct-item h3').equalHeights();
+$('.direct-item').equalHeights();
 
 $(window).resize(function() {
     $('.adv-item p').equalHeights();
     $('.adv-item h3').equalHeights();
+    $('.direct-item h3').equalHeights();
+    $('.direct-item').equalHeights();
 });
 
 
