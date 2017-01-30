@@ -37,7 +37,7 @@ $('.works-wrap, .project-wrap').magnificPopup({
 
 
 
-$('.owl-carousel').owlCarousel({
+$('.carousel-person-wrap').owlCarousel({
   margin: 30,
   autoplay: true,
   autoplaySpeed: 1000,
@@ -67,6 +67,16 @@ $('.owl-carousel').owlCarousel({
       items: 4
     }
   }
+})
+
+
+$('.carousel-img-wrap').owlCarousel({
+  slideSpeed: 1000,
+  paginationSpeed: 1000,
+  rewindSpeed: 1000,
+  dots: true,
+  items: 1,
+  center: true
 })
 
 

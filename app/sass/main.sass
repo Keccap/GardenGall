@@ -194,24 +194,13 @@ h2
 		line-height: em(25px)
 		margin-top: 5px
 		color: #fff
+		text-decoration: none
 		i
 			color: #ccc
 			font-size: 16px
 			margin-right: 6px
 			position: relative
 			top: 2px
-
-
-	.callback
-		display: inline-block
-		color: #eee
-		font-size: em(13px)
-		text-decoration: none
-		border-bottom: 1px dashed #ddd
-		line-height: em(20px)
-		transition: border .3s ease
-		&:hover
-			border-color: transparent
 
 
 
@@ -396,7 +385,7 @@ h2
 .s-direct
 	padding-bottom: 45px
 	h2
-		margin-bottom: 10px
+		margin-bottom: 0
 	.button-wrap
 		text-align: center
 		margin-top: 60px
@@ -430,7 +419,7 @@ h2
 
 
 .direct-item
-	margin-top: 50px
+	margin-top: 60px
 	padding: 0
 	text-align: center
 	&:hover
@@ -484,7 +473,7 @@ h2
 
 
 .s-works
-	background-image: url(../img/bg-works2.jpg)
+	background-image: url(../img/bg-works.jpg)
 	background-size: cover
 	background-position: center center
 	background-attachment: fixed
@@ -508,7 +497,7 @@ h2
 		margin-bottom: 40px
 		
 .works-wrap, .project-wrap
-	margin: 0 30px
+	margin: 0 15px
 
 
 .item-portfolio
@@ -562,6 +551,7 @@ img.cover-image
 	right: 0
 	bottom: 0
 	left: 0
+	padding: 0 15px
 	background-color: rgba(#fff, .8)
 	display: flex
 	justify-content: center
@@ -598,9 +588,22 @@ img.cover-image
 	p
 		text-align: left
 		font-size: em(18px)
-	
-	
 
+	.carousel-img-item
+		p
+			margin-top: 20px
+			font-size: em(16px)
+			font-style: italic
+			text-align: center
+	
+.item-works-mfp-content
+	.owl-dot
+		&.active
+			background-color: $green
+.item-project-mfp-content
+	.owl-dot
+		&.active
+			background-color: $yellow
 
 
 
@@ -672,7 +675,7 @@ img.cover-image
 		margin-bottom: 55px
 	
 
-.car-item
+.carousel-person-item
 	margin-top: 20px
 	text-align: center
 	.img-wrap
