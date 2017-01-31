@@ -18,9 +18,8 @@ var gulp           = require('gulp'),
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/parallax/parallax.min.js',
+		'app/libs/jquery-match-height/dist/jquery.matchHeight-min.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-		'app/libs/jQuery.equalHeights/jquery.equalheights.min.js',
 		'app/libs/modernizr-object-fit/modernizr.js',
 		'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
 
@@ -38,8 +37,8 @@ gulp.task('browser-sync', function() {
 			baseDir: 'app'
 		},
 		notify: false,
-		tunnel: true,
-		tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
+		// tunnel: true,
+		// tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
 	});
 });
 

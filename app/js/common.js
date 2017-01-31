@@ -3,20 +3,11 @@ $(function() {
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 
+$('.adv-item p').matchHeight();
+$('.adv-item h3').matchHeight();
+$('.direct-item h3').matchHeight();
+$('.direct-item').matchHeight();
 
-
-
-$('.adv-item p').equalHeights();
-$('.adv-item h3').equalHeights();
-$('.direct-item h3').equalHeights();
-$('.direct-item').equalHeights();
-
-$(window).resize(function() {
-    $('.adv-item p').equalHeights();
-    $('.adv-item h3').equalHeights();
-    $('.direct-item h3').equalHeights();
-    $('.direct-item').equalHeights();
-});
 
 
 $('.works-wrap, .project-wrap').magnificPopup({
@@ -34,6 +25,23 @@ $('.works-wrap, .project-wrap').magnificPopup({
     removalDelay: 300,
     mainClass: 'my-mfp-zoom-in'
   });
+
+
+$('.button-form').magnificPopup({
+    type: 'inline',
+    fixedContentPos: true,
+    fixedBgPos: true,
+
+    overflowY: 'auto',
+
+    closeBtnInside: true,
+    preloader: false,
+    
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'my-mfp-zoom-in'
+  });
+
 
 
 

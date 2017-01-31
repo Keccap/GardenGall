@@ -4,27 +4,27 @@
 @import "vars"
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #333
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #333
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #333
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #333
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #333
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #333
 
 html, body
 	height: 100%
@@ -248,7 +248,7 @@ h2
 	display: inline-block
 	background-color: $yellow
 	border: 0
-	outline: none
+	outline: none !important
 	color: #fff
 	font-family: "MyriadSetProThin", sans-serif
 	text-transform: uppercase
@@ -272,45 +272,6 @@ h2
 
 
 
-
-.form-send
-	text-align: center
-	background-color: rgba(#eee, .9)
-	color: #ddd
-	padding: 30px
-	border-radius: 5px
-	margin: 0 40px
-	h4
-		margin-top: 0
-		margin-bottom: 30px
-		color: $darkgreen
-		font-size: em(23px)
-		line-height: em(18px)
-	label
-		display: block
-		width: 100%
-		text-align: left
-		font-size: em(15px)
-		color: $darkgreen
-		font-family: "MyriadSetProSemiBold", sans-serif
-	input
-		display: block
-		width: 100%
-		margin-bottom: 15px
-		background-color: #eaeaea
-		color: #000
-		padding: 3px 0 3px 8px
-		border: 0
-		border-radius: 5px
-		outline: none
-		border-bottom: 5px solid #aaa
-		font-weight: bold
-		transition: all .25s ease
-		&:focus
-			background-color: #fff
-			border-bottom: 5px solid $darkgreen
-	.button
-		margin-top: 10px
 
 
 
@@ -381,14 +342,15 @@ h2
 			display: inline-block
 			border-bottom: 1px dashed #bbb
 
+.button-wrap
+	text-align: center
+	margin-top: 60px
 
 .s-direct
 	padding-bottom: 45px
 	h2
 		margin-bottom: 0
-	.button-wrap
-		text-align: center
-		margin-top: 60px
+
 	.button
 		background-color: lighten($yellow, 1%)
 		box-shadow: 0 4px 0 0 darken($yellow, 5%)
@@ -428,19 +390,15 @@ h2
 			path
 				fill: lighten($yellow, 5%) !important
 
-
-
 	img, svg
 		width: auto
 		height: 100px
 		transition: all .5s ease 
 		path
 			transition: all .5s ease 
-
-
 	h3
 		margin-top: 30px
-		margin-bottom: 10px
+		margin-bottom: 20px
 		text-transform: uppercase
 		font-size: 16px
 	ul
@@ -507,7 +465,7 @@ h2
 	box-shadow: 0 0 1px 1px rgba(#000, .2)
 	position: relative
 	margin-top: 30px
-	height: 250px
+	height: 260px
 	background-size: cover
 	background-position: center center
 	color: #222
@@ -595,6 +553,10 @@ img.cover-image
 			font-size: em(16px)
 			font-style: italic
 			text-align: center
+
+	button.mfp-close
+		color: darken($green, 33%)
+
 	
 .item-works-mfp-content
 	.owl-dot
@@ -604,7 +566,8 @@ img.cover-image
 	.owl-dot
 		&.active
 			background-color: $yellow
-
+	button.mfp-close
+		color: darken($yellow, 8%)
 
 
 
@@ -614,7 +577,6 @@ img.cover-image
 	margin-bottom: 40px
 	button.mfp-close
 		font-size: 37px
-		color: darken($green, 33%)
 
 	
 	
@@ -624,18 +586,18 @@ img.cover-image
  */
 
 /* start state */
-.my-mfp-zoom-in .item-portfolio-mfp-content
+.my-mfp-zoom-in .item-portfolio-mfp-content, .my-mfp-zoom-in .form-callback
 	opacity: 0
 	transition: all 0.2s ease-in-out
 	transform: scale(0.8) 
 
 /* animate in */
-.my-mfp-zoom-in.mfp-ready .item-portfolio-mfp-content
+.my-mfp-zoom-in.mfp-ready .item-portfolio-mfp-content, .my-mfp-zoom-in.mfp-ready .form-callback
 	opacity: 1
 	transform: scale(1)
 
 /* animate out */
-.my-mfp-zoom-in.mfp-removing .item-portfolio-mfp-content
+.my-mfp-zoom-in.mfp-removing .item-portfolio-mfp-content, .my-mfp-zoom-in.mfp-removing .form-callback
 	transform: scale(0.8)
 	opacity: 0
 
@@ -658,6 +620,9 @@ img.cover-image
 	background-image: url(../img/bg-works.jpg)	
 	h2
 		margin-bottom: 40px
+	button.more
+		color: darken($yellow, 5%)
+
 
 .s-works, .s-project
 	.section-icon-wrap
@@ -665,8 +630,20 @@ img.cover-image
 		img, svg
 			path
 				fill: #fff !important
-	
-	
+
+button.more
+	border-radius: 50%
+	width: 3em
+	height: 3em
+	text-transform: lowercase
+	font-weight: bold
+	letter-spacing: 1px
+	border: 0
+	background-color: #fff
+	color: $green2
+	transition: transform .5s ease
+	&:hover
+		transform: scale(1.15)
 
 
 	
@@ -694,7 +671,7 @@ img.cover-image
 	.tel
 		font-weight: bold
 		i
-			color: darken($green, 24%)
+			color: $green2
 			font-size: 19px
 			vertical-align: middle
 	
@@ -714,7 +691,124 @@ img.cover-image
 
 
 
+.s-reviews
+	background-image: url(../img/bg-reviews.jpg)
+	background-size: cover
+	background-position: center center
+	background-attachment: fixed
+	position: relative
+	overflow: hidden
+	color: #fff
+	>*
+		position: relative
+		z-index: 2
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		right: 0
+		background-color: darken($green, 30%)
+		opacity: .85
+		z-index: 1
 
+
+.reviews-item
+	background-color: #fff
+	color: #333
+	box-shadow: 0 0 1px 1px rgba(#000, .2)
+	border-radius: 65px
+	padding: 20px
+	margin-left: 5%
+	margin-right: 20%
+	margin-bottom: 40px
+	&:nth-child(odd)
+		margin-left: 20%
+		margin-right: 5%
+
+
+.reviews-author
+	position: absolute
+	width: 90px
+	height: 90px
+	border-radius: 50%
+	overflow: hidden
+
+.reviews-text
+	padding-left: 110px
+	
+
+
+
+.s-contacts
+	&::after
+		display: none
+	.requisites
+		margin-bottom: 20px
+		p
+			margin-top: 0
+			margin-bottom: 10px
+			i
+				width: 1.5em
+				text-align: center
+				color: $green2
+				font-size: 20px
+			span
+				font-weight: bold
+	
+
+.form-send
+	text-align: center
+	background-color: rgba($darkgreen, .9)
+	color: #ddd
+	padding: 40px 30px
+	border-radius: 5px
+	h4
+		margin-top: 0
+		margin-bottom: 20px
+		color: #fff
+		font-size: em(19px)
+		line-height: em(18px)
+		text-transform: uppercase
+	p
+		margin-top: 0
+		margin-bottom: 20px
+		line-height: em(19px)
+	label
+		display: block
+		width: 100%
+		text-align: left
+		font-size: em(15px)
+		color: #eee
+		font-family: "MyriadSetProSemiBold", sans-serif
+	input
+		display: block
+		width: 100%
+		margin-bottom: 25px
+		background-color: #eaeaea
+		color: #000
+		padding: 7px 0 7px 8px
+		border: 0
+		border-radius: 3px
+		outline: none
+		border-bottom: 5px solid #eaeaea
+		font-weight: bold
+		transition: all .25s ease
+		&:focus
+			background-color: #fff
+			border-bottom: 5px solid $yellow
+	.button
+		margin-top: 20px
+
+
+.form-callback
+	max-width: 315px
+	margin: 0 auto
+	background-color: rgba($darkgreen, .85)
+	box-shadow: 0 0 9px 2px rgba(#000, .2)
+	button.mfp-close
+		color: #ccc
 
 
 
