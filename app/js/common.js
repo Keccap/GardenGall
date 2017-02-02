@@ -1,5 +1,57 @@
 $(function() {
 
+$('.main-head').parallax({
+  imageSrc: 'img/bg-header.jpg',
+  zIndex: '1'
+});
+
+$('.s-about').parallax({
+  imageSrc: 'img/bg-about.jpg',
+  zIndex: '1'
+});
+
+$('.s-portfolio-wrap').parallax({
+  imageSrc: 'img/bg-works.jpg',
+  zIndex: '1'
+});
+
+$('.s-reviews').parallax({
+  imageSrc: 'img/bg-reviews.jpg',
+  zIndex: '1'
+});
+
+$(window).resize(function() {
+  $('.main-head').parallax({
+  imageSrc: 'img/bg-header.jpg',
+  zIndex: '1',
+  androidFix: true,
+  iosFix: true
+});
+
+$('.s-about').parallax({
+  imageSrc: 'img/bg-about.jpg',
+  zIndex: '1',
+  androidFix: true,
+  iosFix: true
+});
+
+$('.s-portfolio-wrap').parallax({
+  imageSrc: 'img/bg-works.jpg',
+  zIndex: '1',
+  androidFix: true,
+  iosFix: true
+});
+
+$('.s-reviews').parallax({
+  imageSrc: 'img/bg-reviews.jpg',
+  zIndex: '1',
+  androidFix: true,
+  iosFix: true
+});
+})
+
+
+
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 
@@ -8,7 +60,10 @@ $('.adv-item h3').matchHeight();
 $('.direct-item h3').matchHeight();
 $('.direct-item').matchHeight();
 
-
+$("img.lazy").lazyload({
+  effect : "fadeIn",
+  threshold : 300
+});
 
 $('.works-wrap, .project-wrap').magnificPopup({
     type: 'inline',
@@ -107,7 +162,17 @@ $(".item-project").each(function(e) {
 
 
 if ( ! Modernizr.objectfit ) {
-  $('.cover-image-wrap').each(function () {
+  $('.cover-image-wrap-portf').each(function () {
+    var $container = $(this),
+        imgUrl = $container.find('img.cover-image').attr('data-original');
+    if (imgUrl) {
+      $container
+        .css('backgroundImage', 'url(' + imgUrl + ')')
+        .addClass('fallback');
+    }  
+  });
+
+    $('.cover-image-wrap').each(function () {
     var $container = $(this),
         imgUrl = $container.find('img.cover-image').prop('src');
     if (imgUrl) {
@@ -116,6 +181,7 @@ if ( ! Modernizr.objectfit ) {
         .addClass('fallback');
     }  
   });
+
 }
 
 
@@ -155,11 +221,6 @@ jQuery('.img-svg').each(function(){
     }, 'xml');
 
 });
-
-
-
-
-
 
 
 

@@ -22,6 +22,8 @@ gulp.task('scripts', function() {
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/libs/modernizr-object-fit/modernizr.js',
 		'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
+		'app/libs/jquery_lazyload/jquery.lazyload.min.js',
+		'app/libs/parallax/parallax.min.js',
 
 		'app/js/common.js', // Всегда в конце
 		])
@@ -37,8 +39,8 @@ gulp.task('browser-sync', function() {
 			baseDir: 'app'
 		},
 		notify: false,
-		// tunnel: true,
-		// tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
+		tunnel: true,
+		tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
 	});
 });
 
