@@ -20,35 +20,12 @@ $('.s-reviews').parallax({
   zIndex: '1'
 });
 
-$(window).resize(function() {
-  $('.main-head').parallax({
-  imageSrc: 'img/bg-header.jpg',
-  zIndex: '1',
-  androidFix: true,
-  iosFix: true
-});
 
-$('.s-about').parallax({
-  imageSrc: 'img/bg-about.jpg',
-  zIndex: '1',
-  androidFix: true,
-  iosFix: true
+var timer;
+$(window).bind('resize', function() {
+clearTimeout(timer);
+timer = setTimeout(function(){ $(window).resize(); }, 250);
 });
-
-$('.s-portfolio-wrap').parallax({
-  imageSrc: 'img/bg-works.jpg',
-  zIndex: '1',
-  androidFix: true,
-  iosFix: true
-});
-
-$('.s-reviews').parallax({
-  imageSrc: 'img/bg-reviews.jpg',
-  zIndex: '1',
-  androidFix: true,
-  iosFix: true
-});
-})
 
 
 
