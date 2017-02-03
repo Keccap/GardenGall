@@ -112,7 +112,7 @@ h2
 		background-repeat: repeat-x
 		background-size: 26px 100%
 
-.s-white
+.s-yellow
 	background-size: cover
 	background-position: center center
 	background-attachment: fixed
@@ -241,6 +241,12 @@ h2
 		margin-top: 55px
 		margin-bottom: 20px
 		box-shadow: 0 4px 0 0 darken($yellow, 6%), 0 4px 3px 0 rgba(#000, .4)
+		&:hover
+			background-color: lighten($yellow, 3%)
+			box-shadow: 0 4px 0 0 darken($yellow, 3%), 0 4px 3px 0 rgba(#000, .4)
+		&:focus
+			background-color: darken($yellow, 6%)
+			box-shadow: 0 4px 0 0 darken($yellow, 6%), 0 4px 3px 0 rgba(#000, .4)
 
 .button
 	display: inline-block
