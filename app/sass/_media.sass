@@ -44,6 +44,30 @@
 	.item-portfolio
 		height: 350px
 
+	.reviews-wrap
+		margin-top: 110px
+		text-align: center
+	.reviews-item
+		margin-right: 0
+		margin-left: 0
+		margin-top: 150px
+		&:nth-child(odd)
+			margin-left: 0
+			margin-right: 0
+	.reviews-author
+		left: 50%
+		top: -10px
+		transform: translate(-50%, -100%)
+		.img-wrap
+			width: 100px
+			height: 100px
+	.reviews-text
+		&::before
+			left: 50%
+			top: -31px
+			transform: translateX(-50%) rotate(0deg)
+		
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	
