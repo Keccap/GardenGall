@@ -5,6 +5,7 @@ $('.main-head').parallax({
   zIndex: '1'
 });
 
+
 $('.s-about').parallax({
   imageSrc: 'img/bg-about.jpg',
   zIndex: '1'
@@ -199,6 +200,8 @@ jQuery('.img-svg').each(function(){
 
 });
 
+clearTimeout(timer);
+timer = setTimeout(function(){ $(window).resize(); }, 250);
 
 
 
