@@ -205,6 +205,11 @@ timer = setTimeout(function(){ $(window).resize(); }, 250);
 
 
 
+$('.btn-reference').click(function() {
+  $(this).toggleClass('on');
+  $(this).siblings('.direct-list-reference').toggleClass('active');
+  $('.direct-item').matchHeight();
+})
 
 
 

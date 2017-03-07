@@ -28,6 +28,8 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+	margin: 0 !important // для 1 версии sweetalert (и чтоб магнифик не давал ненужный отступ)
+	padding: 0 !important // для 2 версии sweetalert
 
 body
 	font-size: 16px
@@ -35,6 +37,7 @@ body
 	position: relative
 	line-height: 1.75
 	font-family: "MyriadSetProText", sans-serif
+	overflow-y: visible !important // обязательно для всех sweetalert
 	overflow-x: hidden
 	letter-spacing: 1px
 
@@ -139,12 +142,9 @@ h2
 
 .main-head
 	overflow: hidden
-	
 	min-height: 101vh
-
 	position: relative
 	letter-spacing: 0
-
 	>*
 		position: relative
 		z-index: 2
@@ -157,8 +157,8 @@ h2
 		width: 100%
 		height: 100%
 		z-index: 1
-		background-image: url(../img/grid.png)
-		background-color: rgba(#000, .15)
+		background-color: rgba(#000, .35)
+
 
 
 
@@ -174,7 +174,7 @@ h2
 .callback-wrap
 	padding-top: 8px
 	text-align: right
-	text-shadow: 0 0 2px #000
+	text-shadow: 0px 1px 2px rgba(#000, .7)
 	.phone
 		font-family: "OpenSansBold", sans-serif
 		font-size: em(20px)
@@ -187,15 +187,15 @@ h2
 			margin-right: 4px
 			position: relative
 			top: 1px
-	.mail
-		font-size: em(14px)
+	.address
+		font-size: em(16px)
 		line-height: em(25px)
 		margin-top: 5px
 		color: #fff
 		text-decoration: none
 		i
 			color: #ccc
-			font-size: 16px
+			font-size: 17px
 			margin-right: 6px
 			position: relative
 			top: 2px
@@ -206,37 +206,43 @@ h2
 	margin: 7% 0 9%
 	text-align: center
 	h1, h3, ul
-		text-shadow: 0 0 2px #000
+		text-shadow: 0px 1px 2px rgba(#000, .7)
 	h1
 		margin: 0
 		font-size: em(90px)
 	h3
-		margin: 0 0 95px
+		margin: 0 0 85px
 		text-transform: lowercase
-		color: #e1e1e1
-		font-size: em(19px)
-		letter-spacing: 3px
-		font-family: "RalewayLight", sans-serif
+		color: #ddd
+		font-size: em(17px)
+		font-weight: normal
+		letter-spacing: 4px
+		font-family: "Fregat Bold", sans-serif
 
 	ul
 		padding: 0
 		margin: 0
+		margin-left: -22px
 		list-style-type: none
 		text-transform: uppercase
 		li
-			color: #fff
+			color: #eee
 			line-height: em(25px)
 			margin-bottom: 15px
 			font-size: em(14px)
-			font-family: "OpenSansSemiBold", sans-serif
+			font-family: "Fregat Bold", sans-serif
+			letter-spacing: 2px
+			text-shadow: 0px 1px 2px rgba(#000, .9)
 			i
 				font-weight: normal
-				font-style: italic
 				color: $green
-				margin-right: 10px
-				font-size: 22px
+				margin-right: 8px
+				font-size: 20px
 				position: relative
-				top: 1px
+			i.lnd
+				color: #eee
+				font-style: normal
+				top: 4px
 	.button
 		margin-top: 55px
 		margin-bottom: 20px
@@ -297,7 +303,7 @@ h2
 			transform: translateY(-5px)
 			path
 				fill: lighten($yellow, 5%) !important
-		i
+		i.lnd
 			transform: translateY(-5px)
 			color: lighten($yellow, 5%)
 	
@@ -308,7 +314,7 @@ h2
 		path
 			fill: $green2 !important
 			transition: all .5s ease 
-	i
+	i.lnd
 		color: $green2
 		font-size: 67px
 		line-height: 70px
@@ -326,7 +332,6 @@ h2
 	padding: 60px 0
 	text-align: center
 	color: #fff
-
 	position: relative
 	&::before
 		content: ''
@@ -344,22 +349,38 @@ h2
 		z-index: 2
 	img
 		max-width: 300px
-		margin-bottom: 20px
+		margin-bottom: 25px
 	p
 		margin-top: 0
 		margin-bottom: 15px
 		font-size: em(18px)
 		letter-spacing: 2px
 		&.acc
+			margin-top: 15px
 			display: inline-block
-			border-bottom: 1px dashed #bbb
-
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				top: -8px
+				left: 0
+				right: 0
+				border-bottom: 1px dashed rgba(#fff, .4)
+			&::after
+				content: ''
+				position: absolute
+				bottom: -8px
+				left: 0
+				right: 0
+				border-bottom: 1px dashed rgba(#fff, .4)
 .button-wrap
 	text-align: center
-	margin-top: 60px
+	margin-top: 70px
 
 .s-direct
 	padding-bottom: 45px
+	padding-left: 15px
+	padding-right: 15px
 	h2
 		margin-bottom: 0
 
@@ -393,7 +414,7 @@ h2
 
 
 .direct-item
-	margin-top: 60px
+	margin-top: 70px
 	padding: 0
 	text-align: center
 	&:hover
@@ -412,7 +433,7 @@ h2
 		path
 			transition: all .5s ease 
 	i.lnd
-		font-size: 104px
+		font-size: 94px
 		line-height: 100px
 		padding-bottom: 10px
 		color: $green2
@@ -422,7 +443,7 @@ h2
 		margin-bottom: 20px
 		text-transform: uppercase
 		font-size: 16px
-	ul
+	>ul
 		padding: 0
 		margin: 0
 		list-style-type: none
@@ -437,23 +458,50 @@ h2
 				position: relative
 				top: -2px
 				margin-right: 5px
-			li
-				font-size: em(16px)
-				margin-left: 20px
-				font-family: "MyriadSetProText", sans-serif
-				font-style: italic
-				i
-					font-size: 9px
-					position: relative
-					top: -1px
-					margin-right: 5px
+			.direct-list-content
+				padding-right: 25px
+				.btn-reference
+					padding-left: 5px
+					cursor: pointer
+					&:hover, &.on
+						.fa
+							opacity: .6
+					.fa
+						font-size: 16px
+						opacity: .35
+						color: #333
+						position: relative
+						top: 1px
+						transition: opacity .25s ease
+				.direct-list-reference
+					margin: 0
+					font-family: "MyriadSetProText", sans-serif
+					color: #666
+					height: 0
+					overflow: hidden
+					text-indent: 20px
+					&.active
+						height: 100%
+			ul
+				padding: 0
+				margin: 0
+				list-style-type: none
+				li
+					font-size: em(16px)
+					margin-left: 20px
+					font-family: "MyriadSetProText", sans-serif
+					font-style: italic
+					i
+						font-size: 9px
+						position: relative
+						top: -1px
+						margin-right: 5px
 
 
 .s-portfolio-wrap
 	padding-top: 0
 
 .s-works
-
 	position: relative
 	overflow: hidden
 	color: #fff
@@ -816,7 +864,6 @@ button.more
 				font-weight: bold
 	
 .map
-	clear: both
 	height: 340px
 .form-send
 	text-align: center
@@ -873,8 +920,9 @@ button.more
 .lnd
 	font-family: 'landscape'
 	font-size: 50px
-	display: block
-	font-style: normal
+	display: inline-block
+	font-style: normal !important
+	text-transform: lowercase
 
 
 .lnd.lnd_a::before
@@ -904,6 +952,51 @@ button.more
 .lnd.lnd_g::before
 	content: 'g'
 
+.lnd.lnd_h::before
+	content: 'h'
 
+
+.test-wrap
+	height: 100vh
+	position: relative
+
+.form-test
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	background-color: rgba($darkgreen, .9)
+	text-align: center
+	color: #ddd
+	padding: 30px 30px
+	border-radius: 5px
+	max-width: 315px
+	font-size: em(19px)
+	line-height: em(18px)
+
+	input[type="text"], input[type="password"]
+		display: block
+		width: 100%
+		margin-bottom: 25px
+		background-color: #eaeaea
+		color: #000
+		text-align: center
+		padding: 6px 0 6px 0
+		border: 0
+		border-radius: 3px
+		outline: none
+		border-bottom: 5px solid #eaeaea
+		font-weight: bold
+		transition: all .25s ease
+		&:focus
+			background-color: #fff
+			border-bottom: 5px solid $yellow
+	.button
+		margin-top: 0
+		margin-bottom: 5px
+		width: 100%
+		font-size: em(10px)
+		padding: 6px 0 6px 0
+		border-radius: 3px
 
 @import "media"
