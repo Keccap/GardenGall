@@ -56,7 +56,13 @@ $('.works-wrap, .project-wrap').magnificPopup({
     
     midClick: true,
     removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in'
+    mainClass: 'my-mfp-zoom-in',
+    fixedContentPos: false,
+    callbacks: {
+    open: function() {
+      $('body').css('padding-right', 0);
+  }
+}
   });
 
 
@@ -117,7 +123,8 @@ $('.carousel-img-wrap').owlCarousel({
   rewindSpeed: 1000,
   dots: true,
   items: 1,
-  center: true
+  center: true,
+  autoHeight: true
 })
 
 
