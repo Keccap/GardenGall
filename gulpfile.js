@@ -39,8 +39,8 @@ gulp.task('browser-sync', function() {
 			baseDir: 'app'
 		},
 		notify: false,
-		tunnel: true,
-		tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
+		//tunnel: true,
+		//tunnel: "sadovaia", //Demonstration page: http://sadovaia.localtunnel.me
 	});
 });
 
